@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt ';
-import * as clienteService from '../services/clienteService';
+import bcrypt from 'bcrypt';
+import * as clienteService from '../services/clienteService.js';
 export const login = async (req, res) => {
     const { cpf, senha } = req.body;
     try {

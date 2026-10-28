@@ -14,6 +14,7 @@ export const clienteCreateSchema = Joi.object({
   cep: Joi.string().required(),
   email: Joi.string().email().required().max(50),
   senha: Joi.string().min(6).required(),
+  tipo: Joi.string().required()
 });
 
 export const clienteUpdateSchema = Joi.object({
@@ -23,7 +24,7 @@ export const clienteUpdateSchema = Joi.object({
   cidade: Joi.string().max(30).allow(''),
   cep: Joi.string(),
   email: Joi.string().email().max(50),
-  senha: Joi.string().min(6),
+  senha: Joi.string().min(6)
 }).min(1);
 
 export const listarClientes = async (req, res) => {

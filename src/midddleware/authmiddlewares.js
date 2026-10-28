@@ -1,12 +1,12 @@
 
-import jwt, { decode } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 const authMiddleware = (req, res, next) => {
-    const authHeader = req.herders.authorization;
+    const authHeader = req.headers.authorization;
     if (!authHeader) {
         return res.status(401).json({ message: "Token de autenticação não fornecido." });
     }
 
-    const parts = authHeader.split('');
+    const parts = authHeader.split(' ');
     if (parts.length !== 2) {
         return res.status(401).json({ message: "Token em fomato inválido" });
     }
